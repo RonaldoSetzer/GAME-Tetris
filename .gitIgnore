@@ -1,0 +1,19 @@
+# Game-Tetris
+
+# Build and Release Folders
+bin-debug/
+bin-release/
+temp/
+
+# Project property files
+.actionScriptProperties
+.flexLibProperties
+.settings/
+.project
+
+*.iml
+*.ipr
+*.iws
+*.DS_STORE
+.idea/
+out/
