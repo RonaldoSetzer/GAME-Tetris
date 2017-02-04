@@ -1,8 +1,6 @@
 ![cover](img_cover_tetris.png)
 
-This is an open-source game which was developed with the Actionscript language and all source is available on GitHub.
-
-Designed to shows how to implements Starling, Robotlegs, and Palidor.
+This is an Actionscript open-source game which was designed to shows how to implements Starling, Robotlegs, and Palidor.
 
 + **Category:** Puzzle.
 + **Platform:** Web.
