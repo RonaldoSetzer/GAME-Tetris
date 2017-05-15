@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "dist/",
+    "strictNullChecks": false,
+    "baseUrl": "src/",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "target": "es5",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "types": ["reflect-metadata"],
+    "declaration": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "watch": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+    "src/*",
+    "*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

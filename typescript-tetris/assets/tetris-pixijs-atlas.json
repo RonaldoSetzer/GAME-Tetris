@@ -1,0 +1,252 @@
+{"frames": {
+
+"button_cancel_over.png":
+{
+	"frame": {"x":221,"y":254,"w":37,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":37},
+	"sourceSize": {"w":37,"h":37}
+},
+"button_cancel_up.png":
+{
+	"frame": {"x":260,"y":254,"w":37,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":37},
+	"sourceSize": {"w":37,"h":37}
+},
+"button_config_over.png":
+{
+	"frame": {"x":185,"y":94,"w":132,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":132,"h":38},
+	"sourceSize": {"w":132,"h":38}
+},
+"button_config_up.png":
+{
+	"frame": {"x":278,"y":1,"w":132,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":132,"h":38},
+	"sourceSize": {"w":132,"h":38}
+},
+"button_confirm_over.png":
+{
+	"frame": {"x":299,"y":254,"w":37,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":37},
+	"sourceSize": {"w":37,"h":37}
+},
+"button_confirm_up.png":
+{
+	"frame": {"x":319,"y":81,"w":37,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":37},
+	"sourceSize": {"w":37,"h":37}
+},
+"button_home_over.png":
+{
+	"frame": {"x":319,"y":120,"w":37,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":37},
+	"sourceSize": {"w":37,"h":37}
+},
+"button_home_up.png":
+{
+	"frame": {"x":319,"y":159,"w":37,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":37},
+	"sourceSize": {"w":37,"h":37}
+},
+"button_pause_over.png":
+{
+	"frame": {"x":319,"y":198,"w":37,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":37},
+	"sourceSize": {"w":37,"h":37}
+},
+"button_pause_up.png":
+{
+	"frame": {"x":338,"y":237,"w":37,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":37},
+	"sourceSize": {"w":37,"h":37}
+},
+"button_reset_over.png":
+{
+	"frame": {"x":278,"y":41,"w":132,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":132,"h":38},
+	"sourceSize": {"w":132,"h":38}
+},
+"button_reset_up.png":
+{
+	"frame": {"x":185,"y":134,"w":132,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":132,"h":38},
+	"sourceSize": {"w":132,"h":38}
+},
+"button_resume_over.png":
+{
+	"frame": {"x":358,"y":81,"w":37,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":37},
+	"sourceSize": {"w":37,"h":37}
+},
+"button_resume_up.png":
+{
+	"frame": {"x":358,"y":120,"w":37,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":37},
+	"sourceSize": {"w":37,"h":37}
+},
+"button_retry_over.png":
+{
+	"frame": {"x":358,"y":159,"w":37,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":37},
+	"sourceSize": {"w":37,"h":37}
+},
+"button_retry_up.png":
+{
+	"frame": {"x":358,"y":198,"w":37,"h":37},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":37,"h":37},
+	"sourceSize": {"w":37,"h":37}
+},
+"button_start_over.png":
+{
+	"frame": {"x":185,"y":174,"w":132,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":132,"h":38},
+	"sourceSize": {"w":132,"h":38}
+},
+"button_start_up.png":
+{
+	"frame": {"x":185,"y":214,"w":132,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":132,"h":38},
+	"sourceSize": {"w":132,"h":38}
+},
+"grid.png":
+{
+	"frame": {"x":1,"y":1,"w":182,"h":362},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":182,"h":362},
+	"sourceSize": {"w":182,"h":362}
+},
+"logo_setzer.png":
+{
+	"frame": {"x":185,"y":254,"w":12,"h":20},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":12,"h":20},
+	"sourceSize": {"w":12,"h":20}
+},
+"logo_tetris.png":
+{
+	"frame": {"x":1,"y":365,"w":218,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":218,"h":42},
+	"sourceSize": {"w":218,"h":42}
+},
+"next_tile.png":
+{
+	"frame": {"x":185,"y":1,"w":91,"h":91},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":91},
+	"sourceSize": {"w":91,"h":91}
+},
+"tile_01.png":
+{
+	"frame": {"x":185,"y":276,"w":18,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":18},
+	"sourceSize": {"w":18,"h":18}
+},
+"tile_02.png":
+{
+	"frame": {"x":199,"y":254,"w":18,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":18},
+	"sourceSize": {"w":18,"h":18}
+},
+"tile_03.png":
+{
+	"frame": {"x":338,"y":276,"w":18,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":18},
+	"sourceSize": {"w":18,"h":18}
+},
+"tile_04.png":
+{
+	"frame": {"x":205,"y":293,"w":18,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":18},
+	"sourceSize": {"w":18,"h":18}
+},
+"tile_05.png":
+{
+	"frame": {"x":185,"y":296,"w":18,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":18},
+	"sourceSize": {"w":18,"h":18}
+},
+"tile_06.png":
+{
+	"frame": {"x":225,"y":293,"w":18,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":18},
+	"sourceSize": {"w":18,"h":18}
+},
+"tile_07.png":
+{
+	"frame": {"x":245,"y":293,"w":18,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":18},
+	"sourceSize": {"w":18,"h":18}
+},
+"tile_08.png":
+{
+	"frame": {"x":265,"y":293,"w":18,"h":18},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":18,"h":18},
+	"sourceSize": {"w":18,"h":18}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "tetris-pixijs-atlas.png",
+	"format": "RGBA8888",
+	"size": {"w":411,"h":408},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:fbed92b47b53417190d8549ba23dd963:c60189e54a6cb93b60b9c0fe8c617fe1:8164962b8de200e4f2c7caf6f3148ce9$"
+}
+}
