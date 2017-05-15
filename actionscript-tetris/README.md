@@ -1,12 +1,18 @@
-![cover](img_cover_tetris.png)
+![cover](img_cover_tetris_as.png)
 
-This is an Actionscript open-source game which was designed to shows how to implements Starling, Robotlegs, and Palidor.
+This is an ActionScript open-source game which was developed to shows how to integrate Starling, Robotlegs, and Palidor.
 
 + **Category:** Puzzle.
 + **Platform:** Web.
 + **Language:** Actionscript 3.
 + **Technologies:** StarlingFW, Robotlegs, Palidor, FlexUnit.
 
+
+* * *
+
+### Gameplay
+
+![gif_as](gif_tetris_as_demo.gif)
 
 * * *
 
@@ -22,8 +28,9 @@ This is an Actionscript open-source game which was designed to shows how to impl
 * * *
 
 
-### Demo
-+ **[Actionscript](https://ronaldosetzer.github.io/portfolio/open_source/tetris/)**
+### Demos
++ **[ActionScript](https://ronaldosetzer.github.io/portfolio/open_source/tetris_as/)**
++ **[TypeScript](https://ronaldosetzer.github.io/portfolio/open_source/tetris_ts/)**
 
 
 * * *
@@ -32,12 +39,12 @@ This is an Actionscript open-source game which was designed to shows how to impl
 
 #### Game Flow
 
-![screenshot01](img_ss_tetris_01.png)
+![screenshot01](img_ss_tetris_as_01.png)
 
 
 #### Views - Managers - Mediators - Commands
 
-![screenshot02](img_ss_tetris_02.png)
+![screenshot02](img_ss_tetris_as_02.png)
 
 
 ### Palidor Config
@@ -99,7 +106,7 @@ public class GameConfig implements IConfig
 
 
 ### Screenshots
-![screenshot01](img_game_tetris.png)
+![screenshot01](img_game_tetris_as.png)
 * * *
 
 **Ronaldo Santiago**  - Game Developer [ [portfolio](https://ronaldosetzer.github.io/portfolio/) ]

@@ -2,6 +2,9 @@ package setzer.tetris.assets
 {
 	public class Embeds
 	{
+		[Embed(source="/../assets/atlas/extras/logo_actionscript.png")]
+		public static const LANGUAGE_IMAGE:Class;
+
 		/* ATLAS */
 		[Embed(source="/../assets/atlas/tetris-starling-atlas-0.png")]
 		public static const ATLAS_IMAGE:Class;

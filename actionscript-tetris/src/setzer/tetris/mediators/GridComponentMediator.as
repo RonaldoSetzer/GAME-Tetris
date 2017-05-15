@@ -80,9 +80,13 @@ package setzer.tetris.mediators
 
 			var methods:Object = {};
 			methods[37] = gameManager.moveCurrentPieceLeft;
+			methods[65] = gameManager.moveCurrentPieceLeft;
 			methods[39] = gameManager.moveCurrentPieceRight;
+			methods[68] = gameManager.moveCurrentPieceRight;
 			methods[38] = gameManager.rotateCurrentPiece;
+			methods[87] = gameManager.rotateCurrentPiece;
 			methods[40] = gameManager.moveCurrentPieceDown;
+			methods[83] = gameManager.moveCurrentPieceDown;
 
 			if ( methods[e.keyCode] ) methods[e.keyCode]();
 
