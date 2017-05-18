@@ -8,11 +8,8 @@
     "removeComments": true,
     "preserveConstEnums": true,
     "target": "es5",
-    "lib": [
-      "es6",
-      "dom"
-    ],
-    "types": ["reflect-metadata"],
+    "lib": ["es6", "dom"],
+    "types": ["reflect-metadata", "mocha"],
     "declaration": true,
     "moduleResolution": "node",
     "sourceMap": true,
