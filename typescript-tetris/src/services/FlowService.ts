@@ -1,12 +1,13 @@
+import { PalidorEvent } from "@robotlegsjs/pixi-palidor/lib";
 import { FlowEvent } from "./../events/FlowEvent";
 
-import { injectable, inject, IEventDispatcher, EventDispatcher } from "robotlegs";
+import { injectable, inject, IEventDispatcher, EventDispatcher } from "@robotlegsjs/core";
 
 @injectable()
 export class FlowService {
 
     @inject(IEventDispatcher)
-    public eventDispatcher: IEventDispatcher;
+    private eventDispatcher: IEventDispatcher;
 
     // Views
     public setGameView(): void {
@@ -44,7 +45,7 @@ export class FlowService {
 
     // extras
     public closePopup(): void {
-        this.dispatchEventWith(FlowEvent.CLOSE_POPUP);
+        this.dispatchEventWith(PalidorEvent.REMOVE_LAST_FLOATING_VIEW_ADDED);
     }
 
     public dispatchEventWith(type: string): void {

@@ -3,13 +3,13 @@ import { Tile } from "./../models/Tile";
 import { TileGroup } from "../models/TileGroup";
 import { GameService } from "../services/GameService";
 
-import { injectable, inject } from "robotlegs";
+import { injectable, inject } from "@robotlegsjs/core";
 
 @injectable()
 export class GameManager {
 
     @inject(GameService)
-    public gameService: GameService;
+    private gameService: GameService;
 
     private _grid: Grid;
     private _currentPiece: TileGroup;
@@ -52,6 +52,44 @@ export class GameManager {
         return this._tilesToRemove;
     }
 
+    public moveCurrentPieceLeft(): void {
+        this._currentPiece.moveHorizontal(-1);
+
+        if (this.isMovementValid() === false) {
+            this._currentPiece.rollbackX();
+        } else {
+            this.addTilesToUpdate(this._currentPiece.tiles);
+        }
+    }
+
+    public moveCurrentPieceRight(): void {
+        this._currentPiece.moveHorizontal(1);
+
+        if (this.isMovementValid() === false) {
+
+            this._currentPiece.rollbackX();
+        } else {
+
+            this.addTilesToUpdate(this._currentPiece.tiles);
+        }
+    }
+
+    public moveCurrentPieceDown(): void {
+        this._currentPiece.moveVertical();
+
+        if (this.isMovementValid() === false) {
+            this._currentPiece.rollbackY();
+
+            let tiles: Array<Tile> = this._currentPiece.tiles;
+            for (let i = 0; i < tiles.length; i++) {
+                this._grid.setTile(tiles[i], tiles[i].col, tiles[i].row);
+            }
+            this.solveCompletedRows();
+            this.gameService.getNextPiece();
+        } else {
+            this.addTilesToUpdate(this._currentPiece.tiles);
+        }
+    }
     private solveCompletedRows(): void {
         let linesRemoved = 0;
 
@@ -102,45 +140,6 @@ export class GameManager {
 
     private addTilesToUpdate(tiles: Array<Tile>): void {
         this._tilesToUpdate = this._tilesToUpdate.concat(tiles);
-    }
-
-    private moveCurrentPieceLeft(): void {
-        this._currentPiece.moveHorizontal(-1);
-
-        if (this.isMovementValid() === false) {
-            this._currentPiece.rollbackX();
-        } else {
-            this.addTilesToUpdate(this._currentPiece.tiles);
-        }
-    }
-
-    private moveCurrentPieceRight(): void {
-        this._currentPiece.moveHorizontal(1);
-
-        if (this.isMovementValid() === false) {
-
-            this._currentPiece.rollbackX();
-        } else {
-
-            this.addTilesToUpdate(this._currentPiece.tiles);
-        }
-    }
-
-    private moveCurrentPieceDown(): void {
-        this._currentPiece.moveVertical();
-
-        if (this.isMovementValid() === false) {
-            this._currentPiece.rollbackY();
-
-            let tiles: Array<Tile> = this._currentPiece.tiles;
-            for (let i = 0; i < tiles.length; i++) {
-                this._grid.setTile(tiles[i], tiles[i].col, tiles[i].row);
-            }
-            this.solveCompletedRows();
-            this.gameService.getNextPiece();
-        } else {
-            this.addTilesToUpdate(this._currentPiece.tiles);
-        }
     }
 
     private validateGameOver(): void {

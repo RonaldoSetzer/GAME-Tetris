@@ -4,19 +4,19 @@ import { GameModel } from "./../models/GameModel";
 import { GameStatus } from "./../models/GameStatus";
 import { TileGroupFactory } from "./../utils/TileGroupFactory";
 
-import { ICommand, injectable, inject } from "robotlegs";
+import { ICommand, injectable, inject } from "@robotlegsjs/core";
 
 @injectable()
 export class CreateLevelCommand implements ICommand {
 
     @inject(GameModel)
-    public model: GameModel;
+    private model: GameModel;
 
     @inject(GameService)
-    public gameService: GameService;
+    private gameService: GameService;
 
     @inject(FlowService)
-    public flowService: FlowService;
+    private flowService: FlowService;
 
     /*@inject(SharedObjectManager)
     public sharedObjectManager: SharedObjectManager;*/

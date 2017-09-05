@@ -11,8 +11,8 @@ import { TileDisplay } from "./../views/components/TileDisplay";
 import { GridComponent } from "./../views/components/GridComponent";
 
 import { Sprite } from "pixi.js";
-import { Mediator } from "robotlegs-pixi";
-import { injectable, inject } from "robotlegs";
+import { Mediator } from "@robotlegsjs/pixi";
+import { injectable, inject } from "@robotlegsjs/core";
 
 @injectable()
 export class GridComponentMediator extends Mediator<GridComponent> {
@@ -45,7 +45,7 @@ export class GridComponentMediator extends Mediator<GridComponent> {
     public destroy(): void {
         this._paused = true;
         this.eventMap.unmapListeners();
-        document.removeEventListener("keydown", this.onKeyDownMovement);
+        document.removeEventListener("keydown", this.onKeyDownMovement.bind(this));
     }
 
     private addPiece(): void {
@@ -107,46 +107,46 @@ export class GridComponentMediator extends Mediator<GridComponent> {
 
     private game_onGameOVer(e: any): void {
         this._paused = true;
-        document.removeEventListener("keydown", this.onKeyDownMovement);
+        document.removeEventListener("keydown", this.onKeyDownMovement.bind(this));
     }
 
     private game_onPauseGame(e: any): void {
         this._paused = true;
-        document.removeEventListener("keydown", this.onKeyDownMovement);
+        document.removeEventListener("keydown", this.onKeyDownMovement.bind(this));
     }
 
     private game_onResumeGame(e: any): void {
         this._paused = false;
-        document.addEventListener("keydown", this.onKeyDownMovement);
-        window.requestAnimationFrame(this.onEnterFrame);
+        document.addEventListener("keydown", this.onKeyDownMovement.bind(this));
+        window.requestAnimationFrame(this.onEnterFrame.bind(this));
     }
 
-    private onKeyDownMovement = (e: KeyboardEvent, ob: any = this) => {
+    private onKeyDownMovement(e: KeyboardEvent) {
         if (e.keyCode === 37 || e.keyCode === 65) {
-            ob.gameManager.moveCurrentPieceLeft();
+            this.gameManager.moveCurrentPieceLeft();
         } else if (e.keyCode === 39 || e.keyCode === 68) {
-            ob.gameManager.moveCurrentPieceRight();
+            this.gameManager.moveCurrentPieceRight();
         } else if (e.keyCode === 38 || e.keyCode === 87) {
-            ob.gameManager.rotateCurrentPiece();
+            this.gameManager.rotateCurrentPiece();
         } else if (e.keyCode === 40 || e.keyCode === 83) {
-            ob.gameManager.moveCurrentPieceDown();
+            this.gameManager.moveCurrentPieceDown();
         }
-        ob.updateDisplays();
+        this.updateDisplays();
     }
 
-    private onEnterFrame = (e: any, obThis: any = this) => {
-        if (obThis._paused === true) {
+    private onEnterFrame(e: any): void {
+        if (this._paused === true) {
             return;
         }
 
-        obThis._tick++;
+        this._tick++;
 
-        if (obThis._tick > GameUtils.getCurrentSpeed(obThis.model.level)) {
-            obThis.gameManager.tickUpdate();
-            obThis._tick = 0;
+        if (this._tick > GameUtils.getCurrentSpeed(this.model.level)) {
+            this.gameManager.tickUpdate();
+            this._tick = 0;
         }
 
         this.updateDisplays();
-        window.requestAnimationFrame(obThis.onEnterFrame);
+        window.requestAnimationFrame(this.onEnterFrame.bind(this));
     }
 }

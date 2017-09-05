@@ -5,17 +5,18 @@ import { GameEvent } from "./../events/GameEvent";
 import { NextPieceComponent } from "./../views/components/NextPieceComponent";
 import { GameService } from "./../services/GameService";
 import { GameModel } from "./../models/GameModel";
-import { injectable, inject } from "robotlegs";
-import { Mediator } from "robotlegs-pixi";
+
+import { Mediator } from "@robotlegsjs/pixi";
+import { injectable, inject } from "@robotlegsjs/core";
 
 @injectable()
 export class NextPieceComponentMediator extends Mediator<NextPieceComponent> {
 
     @inject(GameModel)
-    public model: GameModel;
+    private model: GameModel;
 
     @inject(GameService)
-    public gameService: GameService;
+    private gameService: GameService;
 
     public initialize(): void {
         this.eventMap.mapListener( this.eventDispatcher, GameEvent.UPDATE_NEXT_PIECE, this.game_updateNextPiece, this);

@@ -2,17 +2,17 @@ import { FlowService } from "./../services/FlowService";
 import { GameService } from "./../services/GameService";
 import { StartingPopup } from "./../views/StartingPopup";
 
-import { Mediator } from "robotlegs-pixi";
-import { injectable, inject } from "robotlegs";
+import { Mediator } from "@robotlegsjs/pixi";
+import { injectable, inject } from "@robotlegsjs/core";
 
 @injectable()
 export class StartingPopupMediator extends Mediator<StartingPopup> {
 
     @inject(GameService)
-    public gameService: GameService;
+    private gameService: GameService;
 
     @inject(FlowService)
-    public flowService: FlowService;
+    private flowService: FlowService;
 
     private _count: number;
 

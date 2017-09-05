@@ -3,19 +3,19 @@ import { GameModel } from "./../models/GameModel";
 import { GameService } from "./../services/GameService";
 import { GameUtils } from "./../utils/GameUtils";
 
-import { inject, injectable, ICommand } from "robotlegs";
+import { inject, injectable, ICommand } from "@robotlegsjs/core";
 
 @injectable()
 export class IncreasePointsCommand implements ICommand {
 
     @inject(GameModel)
-    public model: GameModel;
+    private model: GameModel;
 
     @inject(GameEvent)
-    public event: GameEvent;
+    private event: GameEvent;
 
     @inject(GameService)
-    public gameService: GameService;
+    private gameService: GameService;
 
     public execute(): void {
         this.model.score += GameUtils.getPointsByLines(this.event.lines);

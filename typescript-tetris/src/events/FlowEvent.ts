@@ -1,4 +1,4 @@
-import { Event } from "robotlegs";
+import { Event } from "@robotlegsjs/core";
 
 export class FlowEvent extends Event {
 

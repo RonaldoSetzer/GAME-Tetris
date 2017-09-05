@@ -2,17 +2,17 @@ import { GameService } from "./../services/GameService";
 import { FlowService } from "./../services/FlowService";
 import { GameOverPopup } from "./../views/GameOverPopup";
 
-import { Mediator } from "robotlegs-pixi";
-import { injectable, inject } from "robotlegs";
+import { Mediator } from "@robotlegsjs/pixi";
+import { injectable, inject } from "@robotlegsjs/core";
 
 @injectable()
 export class GameOverPopupMediator extends Mediator<GameOverPopup> {
 
     @inject(FlowService)
-    public flowService: FlowService;
+    private flowService: FlowService;
 
     @inject(GameService)
-    public gameService: GameService;
+    private gameService: GameService;
 
     public initialize(): void {
         this.eventMap.mapListener(this.view.homeButton, "click", this.homeButton_onClick, this);

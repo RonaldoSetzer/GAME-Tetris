@@ -2,22 +2,22 @@ import { GameEvent } from "./../events/GameEvent";
 import { FlowService } from "./../services/FlowService";
 import { GameService } from "./../services/GameService";
 import { GameModel } from "./../models/GameModel";
-import { injectable, inject } from "robotlegs";
 import { HUDGameComponent } from "./../views/components/HUDGameComponent";
 
-import { Mediator } from "robotlegs-pixi";
+import { Mediator } from "@robotlegsjs/pixi";
+import { injectable, inject } from "@robotlegsjs/core";
 
 @injectable()
 export class HUDGameComponentMediator extends Mediator<HUDGameComponent> {
 
     @inject(GameModel)
-    public model: GameModel;
+    private model: GameModel;
 
     @inject(GameService)
-    public gameService: GameService;
+    private gameService: GameService;
 
     @inject(FlowService)
-    public flowService: FlowService;
+    private flowService: FlowService;
 
     public initialize(): void {
         this.eventMap.mapListener(this.view.pauseButton, "click", this.pauseButton_onClick, this);

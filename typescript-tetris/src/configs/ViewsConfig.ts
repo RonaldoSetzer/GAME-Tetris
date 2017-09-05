@@ -7,7 +7,6 @@ import { InfoPopupMediator } from "./../mediators/InfoPopupMediator";
 import { IntroViewMediator } from "./../mediators/IntroViewMediator";
 import { NextPieceComponentMediator } from "./../mediators/NextPieceComponentMediator";
 import { OptionsViewMediator } from "./../mediators/OptionsViewMediator";
-import { PixiContainerMediator } from "./../mediators/PixiContainerMediator";
 import { PausePopupMediator } from "./../mediators/PausePopupMediator";
 import { ResetConfirmPopupMediator } from "./../mediators/ResetConfirmPopupMediator";
 import { StartingPopupMediator } from "./../mediators/StartingPopupMediator";
@@ -26,16 +25,14 @@ import { PausePopup } from "./../views/PausePopup";
 import { ResetConfirmPopup } from "./../views/ResetConfirmPopup";
 import { StartingPopup } from "./../views/StartingPopup";
 
-import { PixiContainer } from "./../robotlegs/bender/extensions/palidorFlowManager/impl/PixiContainer";
-
-import { IMediatorMap } from "robotlegs-pixi";
-import { injectable, IConfig, inject } from "robotlegs";
+import { IMediatorMap } from "@robotlegsjs/pixi";
+import { injectable, IConfig, inject } from "@robotlegsjs/core";
 
 @injectable()
 export class ViewsConfig implements IConfig {
 
     @inject(IMediatorMap)
-    public mediatorMap: IMediatorMap;
+    private mediatorMap: IMediatorMap;
 
     public configure(): void {
         this.mapMediators();
@@ -46,7 +43,6 @@ export class ViewsConfig implements IConfig {
         this.mediatorMap.map(HomeView).toMediator(HomeViewMediator);
         this.mediatorMap.map(IntroView).toMediator(IntroViewMediator);
         this.mediatorMap.map(OptionsView).toMediator(OptionsViewMediator);
-        this.mediatorMap.map(PixiContainer).toMediator(PixiContainerMediator);
 
         this.mediatorMap.map(GridComponent).toMediator(GridComponentMediator);
         this.mediatorMap.map(HUDGameComponent).toMediator(HUDGameComponentMediator);

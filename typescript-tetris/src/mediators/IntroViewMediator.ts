@@ -2,17 +2,17 @@ import { AtlasKeys } from "./../utils/AtlasKeys";
 import { FlowService } from "./../services/FlowService";
 import { IntroView } from "../views/IntroView";
 
-import { Mediator } from "robotlegs-pixi";
-import { inject, injectable } from "robotlegs";
+import { Mediator } from "@robotlegsjs/pixi";
+import { inject, injectable } from "@robotlegsjs/core";
 
 @injectable()
 export class IntroViewMediator extends Mediator<IntroView> {
 
     @inject(FlowService)
-    public flowService: FlowService;
+    private flowService: FlowService;
 
     public initialize(): void {
-        setTimeout(this.onTimerOut, 3000, this);
+        setTimeout(this.onTimerOut.bind(this), 3000, this);
 
         let loader = PIXI.loader
             .add(AtlasKeys.ATLAS_PNG)
@@ -20,15 +20,15 @@ export class IntroViewMediator extends Mediator<IntroView> {
             .load(this.onLoad);
     }
 
-    public onLoad = (loader: any, resources: any, obThis: any = this) => {
-        AtlasKeys.update();
-    }
-
     public destroy(): void {
         this.eventMap.unmapListeners();
     }
 
-    private onTimerOut = (obThis: any) => {
-        obThis.flowService.setHomeView();
+    private onLoad() {
+        AtlasKeys.update();
+    }
+
+    private onTimerOut() {
+        this.flowService.setHomeView();
     }
 }

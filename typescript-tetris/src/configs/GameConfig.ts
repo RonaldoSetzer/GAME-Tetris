@@ -9,16 +9,16 @@ import { GameManager } from "./../managers/GameManager";
 import { GameModel } from "./../models/GameModel";
 import { GameService } from "./../services/GameService";
 
-import { IConfig, injectable, inject, IEventCommandMap, IContext } from "robotlegs";
+import { IConfig, injectable, inject, IEventCommandMap, IContext } from "@robotlegsjs/core";
 
 @injectable()
 export class GameConfig implements IConfig {
 
     @inject(IContext)
-    public context: IContext;
+    private context: IContext;
 
     @inject(IEventCommandMap)
-    public commandMap: IEventCommandMap;
+    private commandMap: IEventCommandMap;
 
     public configure(): void {
         TilePool.init();

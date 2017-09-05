@@ -2,17 +2,17 @@ import { FlowService } from "./../services/FlowService";
 import { GameService } from "./../services/GameService";
 import { PausePopup } from "./../views/PausePopup";
 
-import { injectable, inject } from "robotlegs";
-import { Mediator } from "robotlegs-pixi";
+import { Mediator } from "@robotlegsjs/pixi";
+import { injectable, inject } from "@robotlegsjs/core";
 
 @injectable()
 export class PausePopupMediator extends Mediator<PausePopup> {
 
     @inject(FlowService)
-    public flowService: FlowService;
+    private flowService: FlowService;
 
     @inject(GameService)
-    public gameService: GameService;
+    private gameService: GameService;
 
     public initialize(): void {
         this.eventMap.mapListener(this.view.homeButton, "click", this.homeButton_onClick, this);

@@ -1,11 +1,11 @@
 import { GameEvent } from "./../events/GameEvent";
-import { injectable, inject, IEventDispatcher, EventDispatcher } from "robotlegs";
+import { injectable, inject, IEventDispatcher, EventDispatcher } from "@robotlegsjs/core";
 
 @injectable()
 export class GameService {
 
     @inject(IEventDispatcher)
-    public eventDispatcher: IEventDispatcher;
+    private eventDispatcher: IEventDispatcher;
 
     public createLevel(): void {
         this.dispatchEventWith(GameEvent.CREATE_LEVEL);
