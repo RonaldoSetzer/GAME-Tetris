@@ -9,7 +9,7 @@ import { ViewsConfig } from "./configs/ViewsConfig";
 
 import { Context, MVCSBundle, LogLevel } from "@robotlegsjs/core";
 import { PixiBundle, ContextView } from "@robotlegsjs/pixi";
-import { PalidorPixiExtension, PixiRootContainer } from "@robotlegsjs/pixi-palidor";
+import { PalidorPixiExtension } from "@robotlegsjs/pixi-palidor";
 
 class Main {
     private stage: PIXI.Container;
@@ -23,8 +23,7 @@ class Main {
         // this.context.logLevel = LogLevel.DEBUG;
         this.context.install(MVCSBundle, PixiBundle)
             .install(PalidorPixiExtension)
-            .configure(new ContextView((<any>this.renderer).plugins.interaction))
-            .configure(new PixiRootContainer(this.stage))
+            .configure(new ContextView(this.stage))
             .configure(ViewsConfig, GameConfig, PalidorConfig)
             .initialize();
 
