@@ -1,19 +1,17 @@
-import { AtlasKeys } from "./AtlasKeys";
 import { TileDisplay } from "./../views/components/TileDisplay";
+import { AtlasKeys } from "./AtlasKeys";
 
 export class TilePool {
-
-    private static _dictionary: Map<number, Array<TileDisplay>>;
+    private static _dictionary: Map<number, TileDisplay[]>;
 
     public static init(): void {
-        this._dictionary = new Map<number, Array<TileDisplay>>();
+        this._dictionary = new Map<number, TileDisplay[]>();
     }
-
     public static getTileDisplay(typeId: number): TileDisplay {
         if (this._dictionary.get(typeId) === undefined) {
             this._dictionary.set(typeId, new Array<TileDisplay>());
         }
-        let list: Array<TileDisplay> = this._dictionary.get(typeId);
+        const list: TileDisplay[] = this._dictionary.get(typeId);
         let tileDisplay: TileDisplay;
         if (list.length === 0) {
             tileDisplay = new TileDisplay(AtlasKeys.getTileTexture(typeId), typeId);
@@ -24,9 +22,8 @@ export class TilePool {
 
         return tileDisplay;
     }
-
     public static back(tile: TileDisplay): void {
-        let list: Array<TileDisplay> = this._dictionary.get(tile.typeId);
+        const list: TileDisplay[] = this._dictionary.get(tile.typeId);
         tile.visible = false;
 
         if (list.indexOf(tile) === -1) {

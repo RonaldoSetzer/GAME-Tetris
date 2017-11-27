@@ -4,7 +4,6 @@ import { Tile } from "./../../src/models/Tile";
 import { assert } from "chai";
 
 describe("TileGroup", () => {
-
     function generateTilesBackup(tiles: Array<Tile>): Array<Tile> {
         let bkpTiles: Array<Tile> = new Array<Tile>();
         for (let i = 0; i < tiles.length; i++) {
@@ -41,8 +40,8 @@ describe("TileGroup", () => {
             tileBefore = tilesBackup[i];
             tileBefore.row += 1;
 
-            result = result && (tileBefore.col === tile.col);
-            result = result && (tileBefore.row === tile.row);
+            result = result && tileBefore.col === tile.col;
+            result = result && tileBefore.row === tile.row;
         }
         assert.isTrue(result);
     });
@@ -55,8 +54,8 @@ describe("TileGroup", () => {
             tileBefore = tilesBackup[i];
             tileBefore.row -= 1;
 
-            result = result && (tileBefore.col === tile.col);
-            result = result && (tileBefore.row === tile.row);
+            result = result && tileBefore.col === tile.col;
+            result = result && tileBefore.row === tile.row;
         }
         assert.isTrue(result);
     });
@@ -69,8 +68,8 @@ describe("TileGroup", () => {
             tileBefore = tilesBackup[i];
             tileBefore.col += 1;
 
-            result = result && (tileBefore.col === tile.col);
-            result = result && (tileBefore.row === tile.row);
+            result = result && tileBefore.col === tile.col;
+            result = result && tileBefore.row === tile.row;
         }
         assert.isTrue(result);
     });
@@ -83,8 +82,8 @@ describe("TileGroup", () => {
             tileBefore = tilesBackup[i];
             tileBefore.col -= 1;
 
-            result = result && (tileBefore.col === tile.col);
-            result = result && (tileBefore.row === tile.row);
+            result = result && tileBefore.col === tile.col;
+            result = result && tileBefore.row === tile.row;
         }
         assert.isTrue(result);
     });
@@ -103,8 +102,8 @@ describe("TileGroup", () => {
             tileBefore.col = tempAnchor.col - tempTile.col;
             tileBefore.row = tempAnchor.row + tempTile.row;
 
-            result = result && (tileBefore.col === tile.col);
-            result = result && (tileBefore.row === tile.row);
+            result = result && tileBefore.col === tile.col;
+            result = result && tileBefore.row === tile.row;
         }
         assert.isTrue(result);
     });
@@ -117,8 +116,8 @@ describe("TileGroup", () => {
             tile = tileGroup.tiles[i];
             tileBefore = tilesBackup[i];
 
-            result = result && (tile.col === tileBefore.col);
-            result = result && (tile.col === tile.bCol);
+            result = result && tile.col === tileBefore.col;
+            result = result && tile.col === tile.bCol;
         }
         assert.isTrue(result);
     });
@@ -131,8 +130,8 @@ describe("TileGroup", () => {
             tile = tileGroup.tiles[i];
             tileBefore = tilesBackup[i];
 
-            result = result && (tile.row === tileBefore.row);
-            result = result && (tile.row === tile.bRow);
+            result = result && tile.row === tileBefore.row;
+            result = result && tile.row === tile.bRow;
         }
         assert.isTrue(result);
     });
@@ -146,11 +145,11 @@ describe("TileGroup", () => {
             tile = tileGroup.tiles[i];
             tileBefore = tilesBackup[i];
 
-            result = result && (tile.col === tileBefore.col);
-            result = result && (tile.row === tileBefore.row);
+            result = result && tile.col === tileBefore.col;
+            result = result && tile.row === tileBefore.row;
 
-            result = result && (tile.col === tile.bCol);
-            result = result && (tile.row === tile.bRow);
+            result = result && tile.col === tile.bCol;
+            result = result && tile.row === tile.bRow;
         }
         assert.isTrue(result);
     });

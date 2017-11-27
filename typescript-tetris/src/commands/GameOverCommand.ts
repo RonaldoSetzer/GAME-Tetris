@@ -1,26 +1,16 @@
-import { FlowService } from "./../services/FlowService";
+import { ICommand, inject, injectable } from "@robotlegsjs/core";
+
 import { GameModel } from "./../models/GameModel";
 import { GameStatus } from "./../models/GameStatus";
-
-import { inject, injectable, ICommand } from "@robotlegsjs/core";
+import { FlowService } from "./../services/FlowService";
 
 @injectable()
 export class GameOverCommand implements ICommand {
-
-    @inject(GameModel)
-    private model: GameModel;
-
-    @inject(FlowService)
-    private flowService: FlowService;
-
-    /*@inject(SharedObjectManager)
-    public sharedObjectManager:SharedObjectManager;*/
+    @inject(GameModel) private model: GameModel;
+    @inject(FlowService) private flowService: FlowService;
 
     public execute(): void {
         this.model.status = GameStatus.GAMEOVER;
-
-        /*this.sharedObjectManager.updateHighScore();*/
-
         this.flowService.showGameOverPopup();
     }
 }

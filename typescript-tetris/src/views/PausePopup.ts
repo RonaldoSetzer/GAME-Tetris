@@ -1,4 +1,4 @@
-import { CustomButton } from "./components/CustomButton";
+import { Container, Text } from "pixi.js";
 
 import { AtlasKeys } from "./../utils/AtlasKeys";
 import { Colors } from "./../utils/Colors";
@@ -6,11 +6,9 @@ import { MagicValues } from "./../utils/MagicValues";
 import { PixiFactory } from "./../utils/PixiFactory";
 import { Texts } from "./../utils/Texts";
 import { ViewPortSize } from "./../utils/ViewPortSize";
-
-import { Container, Text } from "pixi.js";
+import { CustomButton } from "./components/CustomButton";
 
 export class PausePopup extends Container {
-
     private _homeButton: CustomButton;
     public get homeButton(): CustomButton {
         return this._homeButton;
@@ -35,12 +33,10 @@ export class PausePopup extends Container {
         this.setupButtons();
         this.setupText();
     }
-
     private setupBackgrounds(): void {
         this.addChild(PixiFactory.getShadowBackground());
         this.addChild(PixiFactory.getBoardBackground());
     }
-
     private setupButtons(): void {
         this._homeButton = PixiFactory.getButton(AtlasKeys.BUTTON_HOME);
         this._homeButton.x = ViewPortSize.HALF_WIDTH + 25;
@@ -56,14 +52,12 @@ export class PausePopup extends Container {
         this._retryButton.x = ViewPortSize.HALF_WIDTH - 25;
         this._retryButton.y = ViewPortSize.HALF_HEIGHT + 15;
         this.addChild(this._retryButton);
-
     }
-
     private setupText(): void {
-        let tilte: Text = PixiFactory.getText(Texts.PAUSED, Colors.DYNAMIC_TEXT, Texts.FONT_SIZE_DEFAULT + 8);
+        const tilte: Text = PixiFactory.getText(Texts.PAUSED, Colors.DYNAMIC_TEXT, Texts.FONT_SIZE_DEFAULT + 8);
         tilte.x = ViewPortSize.HALF_WIDTH;
         tilte.y = ViewPortSize.HALF_HEIGHT - 35;
-        tilte.anchor.set(.5);
+        tilte.anchor.set(0.5);
         this.addChild(tilte);
     }
 }

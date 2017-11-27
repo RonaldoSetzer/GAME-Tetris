@@ -1,29 +1,18 @@
-import { FlowService } from "./../services/FlowService";
-import { GameService } from "./../services/GameService";
+import { ICommand, inject, injectable } from "@robotlegsjs/core";
+
 import { GameModel } from "./../models/GameModel";
 import { GameStatus } from "./../models/GameStatus";
+import { FlowService } from "./../services/FlowService";
+import { GameService } from "./../services/GameService";
 import { TileGroupFactory } from "./../utils/TileGroupFactory";
-
-import { ICommand, injectable, inject } from "@robotlegsjs/core";
 
 @injectable()
 export class CreateLevelCommand implements ICommand {
-
-    @inject(GameModel)
-    private model: GameModel;
-
-    @inject(GameService)
-    private gameService: GameService;
-
-    @inject(FlowService)
-    private flowService: FlowService;
-
-    /*@inject(SharedObjectManager)
-    public sharedObjectManager: SharedObjectManager;*/
+    @inject(GameModel) private model: GameModel;
+    @inject(GameService) private gameService: GameService;
+    @inject(FlowService) private flowService: FlowService;
 
     public execute(): void {
-        // sharedObjectManager.getExternalData();
-
         this.model.clear();
         this.model.currentPiece = TileGroupFactory.getRandomTileGroup();
         this.model.nextPiece = TileGroupFactory.getRandomTileGroup();

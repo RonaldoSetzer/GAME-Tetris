@@ -1,9 +1,9 @@
 import { injectable } from "@robotlegsjs/core";
+
 import { TileGroup } from "./TileGroup";
 
 @injectable()
 export class GameModel {
-
     public score: number;
     public level: number;
     public lines: number;

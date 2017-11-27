@@ -1,7 +1,6 @@
 import { Sprite, Texture } from "pixi.js";
 
 export class TileDisplay extends Sprite {
-
     private _typeId: number;
 
     public get typeId(): number {
@@ -13,7 +12,6 @@ export class TileDisplay extends Sprite {
 
         this._typeId = typeId;
     }
-
     public removeFromParent(): void {
         this.parent.removeChild(this);
     }

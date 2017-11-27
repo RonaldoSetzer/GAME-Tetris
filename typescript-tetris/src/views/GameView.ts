@@ -1,15 +1,14 @@
-import { GridComponent } from "./components/GridComponent";
-import { HUDGameComponent } from "./components/HUDGameComponent";
-import { NextPieceComponent } from "./components/NextPieceComponent";
+import { Container, Sprite } from "pixi.js";
+
 import { AtlasKeys } from "./../utils/AtlasKeys";
 import { MagicValues } from "./../utils/MagicValues";
 import { PixiFactory } from "./../utils/PixiFactory";
 import { ViewPortSize } from "./../utils/ViewPortSize";
-
-import { Container, Sprite } from "pixi.js";
+import { GridComponent } from "./components/GridComponent";
+import { HUDGameComponent } from "./components/HUDGameComponent";
+import { NextPieceComponent } from "./components/NextPieceComponent";
 
 export class GameView extends Container {
-
     private _gridComponent: GridComponent;
     private _nextPieceComponent: NextPieceComponent;
     private _hudComponent: HUDGameComponent;
@@ -46,12 +45,12 @@ export class GameView extends Container {
     private createBackgrounds(): void {
         this.addChild(PixiFactory.getColorBackground());
 
-        let grid: Sprite = PixiFactory.getImage(AtlasKeys.GRID);
+        const grid: Sprite = PixiFactory.getImage(AtlasKeys.GRID);
         grid.x = MagicValues.BORDER_OFFSET;
         grid.y = 76;
         this.addChild(grid);
 
-        let nextPieceBg: Sprite = PixiFactory.getImage(AtlasKeys.NEXT_TILE);
+        const nextPieceBg: Sprite = PixiFactory.getImage(AtlasKeys.NEXT_TILE);
         nextPieceBg.x = ViewPortSize.MAX_WIDTH - nextPieceBg.width - MagicValues.BORDER_OFFSET;
         nextPieceBg.y = 76;
         this.addChild(nextPieceBg);

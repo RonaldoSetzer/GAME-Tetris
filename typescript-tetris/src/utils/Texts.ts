@@ -1,5 +1,4 @@
 export class Texts {
-
     public static FONT_SIZE_DEFAULT = 22;
     public static FONT_SIZE_HUD = 14;
 
@@ -17,5 +16,4 @@ export class Texts {
 
     public static COMMANDS = "USE THE ARROWS\nTO MOVE\nAND ROTATE";
     public static CONFIRM_RESET = "WOULD LIKE TO RESET\nTHE HI-SCORE?";
-
 }

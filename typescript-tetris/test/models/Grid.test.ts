@@ -21,7 +21,7 @@ describe("Grid", () => {
         let removedRow: Array<Tile> = grid.removeRow(row);
         let result = true;
         for (let col = 0; col < grid.maxCols; col++) {
-            result = result && (grid.getTile(col, row) === null);
+            result = result && grid.getTile(col, row) === null;
         }
         assert.isTrue(result);
     });
@@ -37,7 +37,7 @@ describe("Grid", () => {
         let removedRow: Array<Tile> = grid.removeRow(row);
         let result = true;
         for (let i = 0; i < grid.maxCols; i++) {
-            result = result && (removedRow[i] === tiles[i]);
+            result = result && removedRow[i] === tiles[i];
         }
 
         assert.isTrue(result);
@@ -54,7 +54,7 @@ describe("Grid", () => {
         let getRow: Array<Tile> = grid.getRow(row);
         let result = true;
         for (let i = 0; i < grid.maxCols; i++) {
-            result = result && (getRow[i] === tiles[i]);
+            result = result && getRow[i] === tiles[i];
         }
         assert.isTrue(result);
     });
@@ -63,7 +63,7 @@ describe("Grid", () => {
         let result = true;
         for (let row = 0; row < grid.maxRows; row++) {
             for (let col = 0; col < grid.maxCols; col++) {
-                result = result && (grid.getTile(col, row) === null);
+                result = result && grid.getTile(col, row) === null;
             }
         }
         assert.isTrue(result);

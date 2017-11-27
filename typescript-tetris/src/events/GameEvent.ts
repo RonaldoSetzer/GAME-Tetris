@@ -1,7 +1,6 @@
 import { Event } from "@robotlegsjs/core";
 
 export class GameEvent extends Event {
-
     public static CREATE_LEVEL = "createLevel";
     public static CLEAR_GRID = "clearGrid";
     public static GAME_OVER = "gameOver";

@@ -1,5 +1,5 @@
-import { CustomButton } from "./CustomButton";
-import { DoubleTextField } from "./DoubleTextField";
+import { Container, Text } from "pixi.js";
+
 import { GameModel } from "./../../models/GameModel";
 import { AtlasKeys } from "./../../utils/AtlasKeys";
 import { Colors } from "./../../utils/Colors";
@@ -7,11 +7,10 @@ import { MagicValues } from "./../../utils/MagicValues";
 import { PixiFactory } from "./../../utils/PixiFactory";
 import { Texts } from "./../../utils/Texts";
 import { ViewPortSize } from "./../../utils/ViewPortSize";
-
-import { Container, Text } from "pixi.js";
+import { CustomButton } from "./CustomButton";
+import { DoubleTextField } from "./DoubleTextField";
 
 export class HUDGameComponent extends Container {
-
     private _linesText: DoubleTextField;
     private _scoreText: DoubleTextField;
     private _levelText: DoubleTextField;
@@ -28,23 +27,20 @@ export class HUDGameComponent extends Container {
         this.createTextFields();
         this.createButtons();
     }
-
     public updateData(model: GameModel): void {
         this._linesText.text = String(model.lines);
         this._scoreText.text = String(model.score);
         this._levelText.text = String(model.level);
         this._hiScoreText.text = "0"; // String(model.hiScore);
     }
-
     private createButtons(): void {
         this._pauseButton = PixiFactory.getButton(AtlasKeys.BUTTON_PAUSE);
         this._pauseButton.x = ViewPortSize.MAX_WIDTH - 32;
         this._pauseButton.y = MagicValues.BORDER_OFFSET + 15;
         this.addChild(this._pauseButton);
     }
-
     private createTextFields(): void {
-        let gameLabel: Text = PixiFactory.getText(Texts.TETRIS, Colors.DYNAMIC_TEXT);
+        const gameLabel: Text = PixiFactory.getText(Texts.TETRIS, Colors.DYNAMIC_TEXT);
         gameLabel.x = MagicValues.BORDER_OFFSET;
         gameLabel.y = 24;
         this.addChild(gameLabel);
@@ -69,5 +65,4 @@ export class HUDGameComponent extends Container {
         this._hiScoreText.y = 386;
         this.addChild(this._hiScoreText);
     }
-
 }

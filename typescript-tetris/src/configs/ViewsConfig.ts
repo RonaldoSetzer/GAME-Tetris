@@ -1,3 +1,6 @@
+import { IConfig, inject, injectable } from "@robotlegsjs/core";
+import { IMediatorMap } from "@robotlegsjs/pixi";
+
 import { GameOverPopupMediator } from "./../mediators/GameOverPopupMediator";
 import { GameViewMediator } from "./../mediators/GameViewMediator";
 import { GridComponentMediator } from "./../mediators/GridComponentMediator";
@@ -10,11 +13,9 @@ import { OptionsViewMediator } from "./../mediators/OptionsViewMediator";
 import { PausePopupMediator } from "./../mediators/PausePopupMediator";
 import { ResetConfirmPopupMediator } from "./../mediators/ResetConfirmPopupMediator";
 import { StartingPopupMediator } from "./../mediators/StartingPopupMediator";
-
 import { GridComponent } from "./../views/components/GridComponent";
-import { NextPieceComponent } from "./../views/components/NextPieceComponent";
 import { HUDGameComponent } from "./../views/components/HUDGameComponent";
-
+import { NextPieceComponent } from "./../views/components/NextPieceComponent";
 import { GameOverPopup } from "./../views/GameOverPopup";
 import { GameView } from "./../views/GameView";
 import { HomeView } from "./../views/HomeView";
@@ -25,19 +26,13 @@ import { PausePopup } from "./../views/PausePopup";
 import { ResetConfirmPopup } from "./../views/ResetConfirmPopup";
 import { StartingPopup } from "./../views/StartingPopup";
 
-import { IMediatorMap } from "@robotlegsjs/pixi";
-import { injectable, IConfig, inject } from "@robotlegsjs/core";
-
 @injectable()
 export class ViewsConfig implements IConfig {
-
-    @inject(IMediatorMap)
-    private mediatorMap: IMediatorMap;
+    @inject(IMediatorMap) private mediatorMap: IMediatorMap;
 
     public configure(): void {
         this.mapMediators();
     }
-
     private mapMediators(): void {
         this.mediatorMap.map(GameView).toMediator(GameViewMediator);
         this.mediatorMap.map(HomeView).toMediator(HomeViewMediator);

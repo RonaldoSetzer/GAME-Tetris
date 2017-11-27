@@ -1,15 +1,13 @@
-import { CustomButton } from "./components/CustomButton";
+import { Container, Text } from "pixi.js";
 
 import { AtlasKeys } from "./../utils/AtlasKeys";
 import { Colors } from "./../utils/Colors";
 import { PixiFactory } from "./../utils/PixiFactory";
 import { Texts } from "./../utils/Texts";
 import { ViewPortSize } from "./../utils/ViewPortSize";
-
-import { Container, Text } from "pixi.js";
+import { CustomButton } from "./components/CustomButton";
 
 export class OptionsView extends Container {
-
     private _homeButton: CustomButton;
     public get homeButton(): CustomButton {
         return this._homeButton;
@@ -27,11 +25,9 @@ export class OptionsView extends Container {
         this.setupButtons();
         this.setupTexts();
     }
-
     private setupBackground(): void {
         this.addChild(PixiFactory.getColorBackground());
     }
-
     private setupButtons(): void {
         this._homeButton = PixiFactory.getButton(AtlasKeys.BUTTON_HOME);
         this._homeButton.x = ViewPortSize.MAX_WIDTH - 30;
@@ -43,14 +39,13 @@ export class OptionsView extends Container {
         this._resetButton.y = 116;
         this.addChild(this._resetButton);
     }
-
     private setupTexts(): void {
-        let title: Text = PixiFactory.getText(Texts.CONFIG);
+        const title: Text = PixiFactory.getText(Texts.CONFIG);
         title.x = 15;
         title.y = 18;
         this.addChild(title);
 
-        let hiScore: Text = PixiFactory.getText(Texts.HI_SCORE, Colors.STATIC_TEXT);
+        const hiScore: Text = PixiFactory.getText(Texts.HI_SCORE, Colors.STATIC_TEXT);
         hiScore.x = 15;
         hiScore.y = 105;
         this.addChild(hiScore);

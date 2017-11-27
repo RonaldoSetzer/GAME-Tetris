@@ -1,15 +1,12 @@
-import { CustomButton } from "./components/CustomButton";
+import { Container, Text } from "pixi.js";
 
 import { AtlasKeys } from "./../utils/AtlasKeys";
-import { Colors } from "./../utils/Colors";
 import { PixiFactory } from "./../utils/PixiFactory";
 import { Texts } from "./../utils/Texts";
 import { ViewPortSize } from "./../utils/ViewPortSize";
-
-import { Container, Text } from "pixi.js";
+import { CustomButton } from "./components/CustomButton";
 
 export class ResetConfirmPopup extends Container {
-
     private _cancelButton: CustomButton;
     public get cancelButton(): CustomButton {
         return this._cancelButton;
@@ -29,20 +26,17 @@ export class ResetConfirmPopup extends Container {
         this.setupTexts();
         this.setupButtons();
     }
-
     private setupBackground(): void {
         this.addChild(PixiFactory.getShadowBackground());
         this.addChild(PixiFactory.getBoardBackground());
     }
-
     private setupTexts(): void {
-        let msg: Text = PixiFactory.getText(Texts.CONFIRM_RESET);
-        msg.anchor.set(.5);
+        const msg: Text = PixiFactory.getText(Texts.CONFIRM_RESET);
+        msg.anchor.set(0.5);
         msg.x = ViewPortSize.HALF_WIDTH;
         msg.y = ViewPortSize.HALF_HEIGHT - 30;
         this.addChild(msg);
     }
-
     private setupButtons(): void {
         this._cancelButton = PixiFactory.getButton(AtlasKeys.BUTTON_CANCEL);
         this._cancelButton.x = ViewPortSize.HALF_WIDTH + 25;

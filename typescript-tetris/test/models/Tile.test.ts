@@ -2,7 +2,6 @@ import { Tile } from "./../../src/models/Tile";
 import { assert } from "chai";
 
 describe("Tile", () => {
-
     let tile: Tile;
 
     beforeEach(() => {
@@ -18,7 +17,7 @@ describe("Tile", () => {
         tile.col = 1;
 
         let clone: Tile = tile.clone();
-        let result = (tile.col === clone.col) && (tile.row === clone.row);
+        let result = tile.col === clone.col && tile.row === clone.row;
         assert.isTrue(result);
     });
 
@@ -27,7 +26,7 @@ describe("Tile", () => {
         let col = 1;
 
         tile.setPosition(col, row);
-        let result = (tile.col === col) && (tile.row === row);
+        let result = tile.col === col && tile.row === row;
         assert.isTrue(result);
     });
 });

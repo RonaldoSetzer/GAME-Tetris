@@ -1,10 +1,9 @@
+import { Container, Text } from "pixi.js";
+
 import { Colors } from "./../../utils/Colors";
 import { PixiFactory } from "./../../utils/PixiFactory";
 
-import { Container, Text } from "pixi.js";
-
 export class DoubleTextField extends Container {
-
     private _text: Text;
     public get text(): string {
         return this._text.text;
@@ -16,7 +15,7 @@ export class DoubleTextField extends Container {
     constructor(label: string) {
         super();
 
-        let labelField: Text = PixiFactory.getText(label, Colors.STATIC_TEXT);
+        const labelField: Text = PixiFactory.getText(label, Colors.STATIC_TEXT);
         labelField.anchor.x = 1;
         this.addChild(labelField);
 
